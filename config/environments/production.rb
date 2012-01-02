@@ -20,6 +20,10 @@ SampleApp::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  #added to precompile blueprint CSS
+  config.assets.precompile += %w( blueprint/screen.css blueprint/print.css )
+  
+  
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 
