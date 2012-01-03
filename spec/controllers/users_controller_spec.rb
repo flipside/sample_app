@@ -100,7 +100,7 @@ describe UsersController do
 #        @temp = @attr.merge(:password => old_password, :password_confirmation => old_password)
 #        post :create, :user => @temp
 #        get :new
-#        @temp[:password].should be_blank
+#        response.should have_selector("password", :content => "")
 #      end
       
     end
@@ -126,6 +126,11 @@ describe UsersController do
       it "should have a welcome message" do
         post :create, :user => @attr
         flash[:success].should =~ /welcome to the sample app/i
+      end
+      
+      it "should sign the user in" do
+        post :create, :user => @attr
+        controller.should be_signed_in
       end
     end
   end
