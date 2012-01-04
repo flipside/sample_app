@@ -6,11 +6,13 @@ gem 'rails', '3.1.3'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'gravatar_image_tag', "~> 1.0.0"
+gem 'gravatar_image_tag', '~> 1.0.0'
+gem 'will_paginate', '~> 3.0.2'
 
 group :development do
 	gem 'rspec-rails'
 #	gem 'annotate', '2.4.0'
+	gem 'faker', '~> 1.0.1'
 end
 
 group :test do
